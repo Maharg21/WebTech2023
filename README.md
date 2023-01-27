@@ -1,4 +1,12 @@
 # WebTech2023 
+Homework 2 
+
+
+
+
+
+
+
 Homework 1
 Well, it's been over a year since I wrote an HTML site, I'm pretty sure I missed a couple of things. I prefered to keep it simple and not complicate things, because I've added some things in the code and something goes wrong and I can't figure out what it is.
 
