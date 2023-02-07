@@ -1,0 +1,34 @@
+<html>
+    <head>
+    <title> Choose a thing</title>
+    <body style="background-color: rgb(129, 206, 234);"> </body>
+    <link rel="stylesheet" href="main.css"> 
+    <script src="main.js"></script>
+</head> 
+<body>
+    <h1> Question 1 </h1>
+    <img src="water.jpg" height="219" width="295" 
+   <div id="Question1"> True or False: Water makes different sounds depending on the temperature </div>
+   
+   <button id=choice1 onclick="trueAnswer"()>True</button>
+    <button id=choice2 onclick="falseAnswer"()>False</button>
+
+    <script>
+        function trueAnswer()
+        {
+            document.getElementById('question').innerhtml="That's right(strange isn't it?)";
+            document.getElementById('question').style.color="green"; 
+            document.getElementById('question').style.textTransform="uppercase" 
+        }
+
+        function falseAnswer()
+        {
+            document.getElementById('question').innerhtml="Nope"
+            document.getElementById('question').style.color="red";
+            document.getElementById('question').style.textTransform="uppercase"
+        }
+
+    </script>
+    
+</body>
+</html>
