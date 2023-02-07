@@ -2,6 +2,6 @@ I was running out of time, and really didn't have the mental capacity of dealing
 thing, so I just did a short one-question quiz, and apologies if I don't have every requirement asked. I've spent almost 6 hours trying to get this one True or False question
 to work and I have no idea why it won't show what you got when you choose your answer. I applied two separate functions to the specific buttons and nothing happens when 
 you click on either of them. I tried looking up online, nothing seemed out of the ordinary for what I did. I tried applying a " .innerhtml", which I think is the closest reason
-why it won't work, but I'm unsure what to put in it's place.
+why it won't work, but I'm unsure what to put in it's place if it is.
 
 Do let me know if there was something obvious I missed. I'm still very rusty from Creative Coding 1.
