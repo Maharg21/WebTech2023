@@ -1,0 +1,89 @@
+<html>
+  <style>
+    body{
+        background-color:darkolivegreen  
+    }
+  </style>
+  <script src="main.js"></script> 
+  <script>
+    function getChoice1()
+    {
+        var firstChoice = document.getElementById("choice").value;
+        var firstQuestion = document.getElementById("question");
+        if(firstChoice ==="Wander")
+        {
+            document.getElementById("choice").style.display="none";
+            document.getElementById("btnSubmit").style.display="none";
+
+            document.getElementById("choice2").style.display="block";
+            document.getElementById("btnSubmet2").style.display="block";
+
+            firstQuestion.innerHTML = "You have chosen to wander. The dark snow covered forest is eerie, but in a strange way relaxing. You set your sights on a small cave not far from a flowing river"
+        }
+        else if(firstChoice === "Wait")
+        {
+            document.getElementById("choice3").style.display="none";
+            document.getElementById("btnSubmit").style.display="none";
+
+            document.getElementById(choice3).style.display="block";
+            document.getElementById("btnSubmit3").style.display="block";
+            firstQuestion.inner.HTML = "You choose to wait. As you're all alone, you begin to lose hope and slowly but surely you begin to lose your mind"
+        
+        }
+        else
+        {
+            firstQuestion.innerHTML = "Not an option. Wander, or Wait?";
+        }
+
+        }
+function getChoice2()
+{
+    var answer = document.getElementById("choice2").value;
+    var secondQuestion = document.getElementById("question");
+    if(answer === "Wander")
+    {
+        document.getElementById().src =""
+        secondQuestion.innerHTML =;
+    }
+}
+
+function getChoice3()
+{
+    var answer = document.getElementById("choice3").value;
+    var thirdQuestion = document.getElementById("question");
+    if(answer === "yes")
+    {
+        document.getElementById("mainImage").src = ""
+        thirdQuestion.innerHTML = "";
+    }
+    else if(answer === "no")
+    {
+        thirdQuestion.innerHTML = "";
+    }
+}
+    
+  </script>
+  <body>
+    <h1>Lost</h1>
+    <br>
+    <img src="lost.jpg" id="mainImage"
+    <div id="question">
+    <br>
+        You wake up on a dark snowy exoplanet in the middle of a forest. It looks like earth, but much darker and haunting.
+        It's incredibly isolated with only the sound being the wind and your own thoughts. You only have two choices: Wander or Wait?
+        <br>
+        With the only warmth being your garb, will you wander the planet in hope for survival, or will you wait in hopes of someone or something will find you
+    </div> 
+
+    <br>
+    <input type="text" size="32" id="choice" value="Type Wait or Wander">
+    <button id="btnSubmit" onclick="getChoice1();">Continue?</button>" 
+
+    <input type="text" size="32" id="choice2" value="Choose" style="display:none">
+    <button id="btnSubmit2" onclick="getChoice2();" style="display:none">Continue?</button>
+
+    <input type="text" size="32" id="choice3;" value="Choose" style="display:none">
+    <button id="btnSubmit3" onclick="getChoice3();" style="display:none">Continue?</button>
+
+    </body> 
+</html>
