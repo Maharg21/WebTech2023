@@ -1,0 +1,6 @@
+I feel like I'm getting back in the hang of things with writing the code down, however I'm still getting errors and spending way too much time trying to 
+find out what's causing them. Luckily I do know what's going on; I'm having difficulty trying to define my onload for my printBlanks function. I implemented a separate
+javascript file for the HTML to read and wrote out everything necessary in the example, and yet I don't exactly know why my console log keeps saying it won't define
+the onload. The function is all written out, the html has it embedded, still getting the same result trying different things.
+Hate to throw in the towel right when I'm getting somewhere, but I've withered a good 2 hours trying to troubleshoot and fix this issue, but again I'm probably missing
+something very obvious.
