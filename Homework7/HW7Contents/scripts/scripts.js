@@ -6,7 +6,7 @@ constructor(Title)
 { 
     this.title = title;
     // So the example said the constructor also requires a description and an image path, yet it never listed them. 
-    // Do you use the 'this' for the other objects are are they redundant? I didn't write them down here because there were errors that popped up
+    // Do you use the 'this' for the other objects are they redundant? I didn't write them down here because there were errors that popped up
     this.image = HW7Contents/images/penguin.png; 
     }
     
@@ -19,8 +19,8 @@ toString()
 {
     return "Title: "+ this.title;
 }
-// Not sure why the 'get' is underlined, shouldn't be any unreachable code anywhere
-get theTitle()
+// The "get theTitle" line had an error. Not sure why, there shouldn't be any unreachable code anywhere
+
 {
     return this.title;
     } 
