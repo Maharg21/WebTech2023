@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>OOP</title> 
+    <script>
+        class Penguin {
+            constructor( eyeColor, skinColor, speed, distance) {
+                this.eyeColor = eyeColor;
+            }
+            walk() {
+                return 'I am walking at ' + this.speed + ' miles per hour';
+            }
+            timeToTravel()
+            {
+                let time = this.distance/this.speed;
+                return "The Penguin can move approximately " + Math.round(time) + " hours to cover " + this.distance + "miles."; 
+            }
+            toString() {
+                let str;
+                str = 'The Penguin has ' +
+                this.eyeColor + ' eyes, has '
+                + this.skinColor + 
+                ' skin, and is currently moving at ' + 
+
+                this.speed + 'miles per hour.'; 
+                return str;
+            }
+        }
+
+        function createAndShow()
+        {
+            let albPenguin = new Penguin('black', 'white',1,5);
+            document.getElementById("myWalk").innerHTML = albPenguin.timeToTravel();
+            document.getElementById("albPenguin").innerHTML = albPenguin.toString();
+        }
+    </script>
+</head>
+<body> 
+    <div id="myWalk"></div> 
+    <div id="myTimeToTravel"></div> 
+<div id="albPenguin"></div>
+    
+    <script>
+        createAndShow();
+    
+    </script>
+</body>
+</html>
