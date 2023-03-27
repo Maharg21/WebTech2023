@@ -1,0 +1,21 @@
+#rectangle {
+    width: 200px;
+    height: 100px;
+    background: green;
+    position: absolute;
+    left: 0;
+    top: 400;
+}
+
+.stuff{
+    background: blue;
+    color:black; 
+} 
+#third{
+    background: red;
+    color:black;
+}
+
+body{
+    background-color:darkcyan
+}
