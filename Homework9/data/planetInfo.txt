@@ -1,0 +1,6 @@
+<planet> 
+    <type>Dwarf Planet</type> 
+    <size>Same as Pluto</size> 
+    <distance>Furthest from the sun, 68 Astro Units</distance> 
+    <orbit>558 years</orbit> 
+</planet> 
