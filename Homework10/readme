@@ -1,1 +1,7 @@
+So a few things: 
 
+I think everything's written as it should, however my shapes just won't appear on my canvas no matter how many times I try. I've encountered no errors debugging it, so I'm assuming it's
+because the Draw function isn't in the right place, or I may have misused my variables (I used two different shapes: a circle and a square. The circle is the shape that's controlled by the user)
+
+Couple other issues I encountered was embedding the music didn't seem to work, mainly because the mp3 file might be too big for github (4.84 MB), but it is embedded. I didn't use a background 
+change on the collision mainly because I kept getting errors, or I couldn't find the right tags/statements to right.
