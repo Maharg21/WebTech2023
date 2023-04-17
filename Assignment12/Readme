@@ -1,0 +1,5 @@
+Sorry if there's nothing changed from last week, but again I think everything's writted as it should, it's just I don't know if there's something not in the right order or something's written wrong, etc. I've been using the example as a main source, and what I'm confused about was that the assignment said to create
+classes in a JSON folder, while the example created it's classes in a JS folder. Another issue I encountered was I probably complicated my scripts by adding both a Circle and Square class. Somehow I can only get the square to appear and not the Circle (which is the shape controlled by the player) I'm not sure what's not making it appear, it's either I might've written it as a square (fillRect for instance, is something like that for circles?) 
+or it's something else entirely that I can't figure out.
+
+I've already spent several hours testing and getting unsatisfied results, this is my best attempt. Sorry if I haven't read any feedback yet, this stuff's mentally exhausting. I'll fix as much as I can when I have the chance.
