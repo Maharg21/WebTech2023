@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8"/>
+    <title> Some Beer Game</title>
     <script src="https://cdn.jsdelivr.net/npm/phaser@3.15.1/dist/phaser-arcade-physics.min.js"></script>
+    <style type="text/css">
+        body{
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
 
@@ -23,20 +30,30 @@
             update: update
         }
     };
-
+    var player;
+    var bombs;
+    var redbombs;
     var platforms;
+    var cursors;
+    var levelText;
+    var score = 0; 
+    var gameOver = false;
+    var scoreText; 
 
-    var game = new Phaser.Game(config);
+     var game = new Phaser.Game(config);
 
 
-
+    // some of the bomb sprites aren't from the phaser assets, they're just something I had from a previous project I felt like adding in
     function preload ()
     {
-        this.load.setBaseURL('http://labs.phaser.io');
+        this.load.setBaseURL('http://labs.phaser.io'); 
+
 
         this.load.image('sky', 'assets/skies/space2.png');
-        this.load.image('logo', 'assets/sprites/beer.png');
-        this.load.image('red', 'assets/particles/rising-smoke.png');
+        this.load.image('ground', 'assets/platform.png');
+        this.load.image('bomb', 'assets/bomb.png')
+        this.load.image('redbomb', 'assets/redbomb.png');
+        this.load.image('beer', 'assets/beer.png');  
     }
 
     function create ()
@@ -49,29 +66,133 @@
 
         platforms.create(600, 400, 'ground');
         platforms.create(75, 275, 'ground');
-        platforms.create(800, 250, 'ground');
+        platforms.create(800, 250, 'ground'); 
 
-        var particles = this.add.particles('rising-smoke');
+        player = this.physics.add.sprite(100, 450, 'beer');
 
-        var emitter = particles.createEmitter({
-            speed: 100,
-            scale: { start: 1, end: 0 },
-            blendMode: 'ADD'
+        player.setBounce(0.5);
+        player.setCollideWorldBounds(true);  
+
+        // so not sure if this will work, but my intent was to just have the beer player just be one sprite moving along the platforms. So I assume you just set all the frames to 0 as a single sprite
+
+        this.anims.create({
+            key: 'left',
+            frames: this.anims.generateFrameNumbers('beer', { start: 0, end: 0}),
+            frameRate: 10,
+            repeat: -1
+        }); 
+
+        this.anims.create({
+            key: 'turn', 
+            frames: [ { key: 'beer', frame: 0} ], 
+            frameRate: 20
         });
 
-        var logo = this.physics.add.image(400, 100, 'logo');
+        this.anims.create({
+            key: 'right',
+            frames: this.anims.generateFrameNumbers('beer', { start: 0, end: 0 }),
+            framerate: 10,
+            repeat: -1
+        }); 
 
-        logo.setVelocity(100, 200);
-        logo.setBounce(1, 1);
-        logo.setCollideWorldBounds(true);
 
-        emitter.startFollow(logo);
+            cursors = this.input.keyboard.createCursorKeys();
+
+            bombs = this.physics.add.group({
+                key: 'bomb',
+                repeat: 10, 
+                setXY: { x: 12, y: 0, stepX: 70 } 
+             }); 
+
+             bombs.children.iterate(function (child) {
+                    child.setBounceY(Phaser.Math.FloatBetween (0.5, 0.8));
+                }); 
+
+                redbombs = this.physics.add.group();
+
+                // my level text might be off, should be on the top right side
+                levelText = this.add.text(32, 16, 'the only level' )
+                scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '33px', fill: '#000'});
+                
+
+                cursors = this.input.keyboard.createCursorKeys();
+                this.physics.add.collider(player, platforms); 
+                this.physics.add.collider(bombs, platforms);
+                this.physics.add.collider(redbombs, platforms);
+
+            this.physics.add.overlap(player, bombs, collectBomb, null, this); 
+            this.physics.add.collider(plater, redbombs, hitRedbomb, null, this);
     }
-    </script>
+    function update ()
+    {
+        if (gameOver)
+        {
+            return;
+        }
+        
+        if (cursors.left.isDown)
+        {
+            player.setVelocityX(-160);
+
+            player.anims.play('left', true);
+        }
+        else if (cursors.right.isDown)
+        {
+            player.setVelocityX(160);
+
+            player.anims.play('right', true);
+        }
+        else
+        {
+            player.setVelocityX(0);
+
+            player.anims.play('turn');
+        }
+
+        if (cursors.up.isDown && player.body.touching.down)
+        {
+            player.setVelocityY(-330);
+        }
+    } 
+
+    function collectBomb (player, bomb)
+    {
+        bomb.disableBody(true, true); 
+
+        score += 1;
+        scoreText.setText('Score: ' + score); 
+
+        if (bombs.countActive(true) === 0)
+        {
+            bombs.children.iterate(function (child) {
+                child.enableBody(true, child.x, 0, true, true);
+            }); 
+
+        var x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400); 
+        var redbomb = redbombs.create(x, 16, 'redbomb'); 
+        redbomb.setBounce(1);
+        redbomb.setCollideWorldBounds(true); 
+        redbomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
+        redbomb.allowGravity= false;
+
+
+        }
+    } 
+
+    function hitRedbomb (player, redbomb)
+    {
+        this.physics.pause();
+        
+        player.setTint(0xff0000);
+        
+        player.anims.play('turn'); 
+        
+        gameOver = true;
+    }
+</script>
 
 </body>
 </html>
 
 
 
-<script src="//cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
