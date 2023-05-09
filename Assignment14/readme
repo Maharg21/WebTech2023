@@ -1,0 +1,4 @@
+Sorry again for the lackluster stuff. I have separated htmls for the rotating shapes and lines. My text is included as well, but it won't work because for some reason the console log won't run the font because of the token ":"  in the font code that I didn't want to touch.
+I wanted to try writing the models, but I couldn't find the OBJloader and the TrackBallControls. There wasn't a library folder in the three.js file I downloaded. 
+
+So nothing creative here, just wanted to show I understand how everything's written out and (somewhat) working. However I feel like I'm incredibly limited into what I can do here, like I was even having trouble changing colors on the shapes, sometimes it accepted a color, sometimes it didn't.
