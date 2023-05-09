@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>threejs</title>
+        <style>
+            body { 
+                margin: 0;
+             } 
+            canvas { 
+                display: block; 
+            }
+        </style> 
+    </head> 
+    
+    <body> 
+
+        </script>
+        
+        <script src="library/three.js"> 
+        
+        </script>  
+
+        <script src="library/three.min.js">
+
+        </script>
+
+
+    <script> 
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+   
+       
+        var renderer = new THREE.WebGLRenderer();
+          renderer.setSize( window.innerWidth, window.innerHeight );
+          document.body.appendChild( renderer.domElement );
+       
+          var geometry = new THREE.BoxGeometry(); 
+        var material = new THREE.MeshBasicMaterial({ 
+            //I had some issues trying to change color, sometimes they worked, sometimes they didn't//
+            color: 255,
+        }); 
+        var cube = new THREE.Mesh(geometry, material); 
+        scene.add(cube);
+        
+        camera.position.z = 5;
+
+        function animate() {
+            requestAnimationFrame( animate ); 
+            cube.rotation.x += 0.05;
+cube.rotation.y += 0.05;
+            renderer.render( scene, camera );
+        }
+        animate();
+        </script>  
+
+            
+        
+
+
+        </script>
+
+
+    </body>
+</html>
