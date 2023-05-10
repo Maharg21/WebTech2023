@@ -1,0 +1,118 @@
+#header{
+    background-color: black;
+    text-align: center;
+
+} 
+
+h1{
+    color:darkslategray;
+    font-family: Alkatra; 
+    font-size: 120px; 
+    letter-spacing: 0.3em;
+} 
+
+#first-bar {
+    margin-top: 4em;
+    padding: 1em;
+}
+
+#title:hover{
+    letter-spacing: 0.3em;
+    font-weight: 700; 
+    color:aqua;
+}
+
+
+.subtitle{
+    padding-top: 60px;
+    font-size: 75px;
+    margin: auto;
+} 
+
+.titleIntro{
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    text-align: center; 
+    color:gold;
+}
+
+.titleBorder{
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    text-align: center; 
+    color:coral; 
+   
+}
+
+.content-paragraph{
+    font-size: 25px;
+    font-family: Alkatra;
+    line-height: 40px;
+    text-align: auto;
+} 
+
+.image1 {
+    display: block;
+    margin-left: fixed;
+    margin-right: auto;
+    width: 55%;    
+} 
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+} 
+
+.row::after {
+    content: "";
+    clear:both;
+    display: table;
+}
+
+.image2 {
+    display: block;
+    margin-left: auto;
+    margin-right: fixed;
+    width: 55%;    
+} 
+
+.image3 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 55%;    
+} 
+
+
+/* Menu things*/ 
+.menu-item {
+    display: inline-block;
+    margin: 1em .2em;
+    min-width: 8em;
+    text-align: center;
+    background-color:black;
+    padding: 1em 1.5;
+    border-radius: 1em;
+} 
+
+.site-name {
+    color:aqua;
+    margin-left:auto;
+    margin-right:auto;
+    min-width: 6em;
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    letter-spacing: 0.5em; 
+    float: left;
+    font-weight: bold;
+} 
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
